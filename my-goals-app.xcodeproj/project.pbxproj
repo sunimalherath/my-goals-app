@@ -58,6 +58,10 @@
 		45162660241A329A0051C2E0 /* my-goals-app */ = {
 			isa = PBXGroup;
 			children = (
+				4516267B241A335B0051C2E0 /* Extentions */,
+				4516267A241A33520051C2E0 /* Enums */,
+				45162679241A334B0051C2E0 /* View */,
+				45162678241A333A0051C2E0 /* Controller */,
 				45162661241A329A0051C2E0 /* AppDelegate.swift */,
 				45162663241A329A0051C2E0 /* SceneDelegate.swift */,
 				45162665241A329A0051C2E0 /* ViewController.swift */,
@@ -68,6 +72,34 @@
 				4516266A241A329A0051C2E0 /* my_goals_app.xcdatamodeld */,
 			);
 			path = "my-goals-app";
+			sourceTree = "<group>";
+		};
+		45162678241A333A0051C2E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45162679241A334B0051C2E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4516267A241A33520051C2E0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4516267B241A335B0051C2E0 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TT3935U7A;
 				INFOPLIST_FILE = "my-goals-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cod3breaker.my-goals-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TT3935U7A;
 				INFOPLIST_FILE = "my-goals-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cod3breaker.my-goals-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
