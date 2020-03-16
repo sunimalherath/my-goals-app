@@ -23,4 +23,13 @@ extension UIViewController {
     }
     
     // create a function to dissmiss the passing ViewController just like when having a Navigation Controller
+    func dismissViewController() {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window?.layer.add(transition, forKey: kCATransition)
+        
+        dismiss(animated: false, completion: nil)
+    }
 }
