@@ -16,6 +16,7 @@
 		45162671241A329D0051C2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4516266F241A329D0051C2E0 /* LaunchScreen.storyboard */; };
 		4516267D241A667C0051C2E0 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4516267C241A667C0051C2E0 /* GoalCell.swift */; };
 		45A055AA241F7138007AF3AB /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A055A9241F7138007AF3AB /* CreateGoalVC.swift */; };
+		45A055AC241F769B007AF3AB /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A055AB241F769B007AF3AB /* UIViewControllerExt.swift */; };
 		45D72084241D8CA60027AA05 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D72083241D8CA60027AA05 /* GoalType.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		45162672241A329D0051C2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4516267C241A667C0051C2E0 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		45A055A9241F7138007AF3AB /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateGoalVC.swift; path = "my-goals-app/Controller/CreateGoalVC.swift"; sourceTree = SOURCE_ROOT; };
+		45A055AB241F769B007AF3AB /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		45D72083241D8CA60027AA05 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		4516267B241A335B0051C2E0 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				45A055AB241F769B007AF3AB /* UIViewControllerExt.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				4516266C241A329A0051C2E0 /* my_goals_app.xcdatamodeld in Sources */,
 				45162666241A329A0051C2E0 /* GoalsVC.swift in Sources */,
+				45A055AC241F769B007AF3AB /* UIViewControllerExt.swift in Sources */,
 				45D72084241D8CA60027AA05 /* GoalType.swift in Sources */,
 				45162662241A329A0051C2E0 /* AppDelegate.swift in Sources */,
 				45A055AA241F7138007AF3AB /* CreateGoalVC.swift in Sources */,
