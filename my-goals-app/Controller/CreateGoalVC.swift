@@ -27,6 +27,6 @@ class CreateGoalVC: UIViewController {
     @IBAction func nextBtnWasPressed(_ sender: Any) {
     }
     @IBAction func backBtnWasPressed(_ sender: Any) {
-    }
-    
+        dismissViewController()
+    }    
 }

@@ -40,6 +40,9 @@
                                         <rect key="frame" x="334.33333333333331" y="50.666666666666664" width="20.666666666666686" height="21.999999999999993"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="createGoalVCBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cb5-kt-9cQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42745098039215684" green="0.73725490196078436" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,7 +174,7 @@
         <!--Create GoalVC-->
         <scene sceneID="NTJ-4I-qAH">
             <objects>
-                <viewController id="fMb-RG-NkW" customClass="CreateGoalVC" customModule="my_goals_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createGoalVC" id="fMb-RG-NkW" customClass="CreateGoalVC" customModule="my_goals_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mrn-Ou-bAR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

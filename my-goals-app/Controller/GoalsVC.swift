@@ -16,6 +16,13 @@ class GoalsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    @IBAction func createGoalVCBtnWasPressed(_ sender: Any) {
+        guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "createGoalVC") else {
+            return
+        }
+        presentViewController(createGoalVC)
+    }
 }
 
 extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
