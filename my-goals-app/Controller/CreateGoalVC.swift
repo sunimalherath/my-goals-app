@@ -14,9 +14,11 @@ class CreateGoalVC: UIViewController {
     @IBOutlet weak var shortTermBtn: UIButton!
     @IBOutlet weak var longTermBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBtn.bindToKeyboard()
     }
     
     // IBActions
