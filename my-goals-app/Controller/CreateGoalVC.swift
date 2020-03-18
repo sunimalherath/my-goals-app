@@ -23,8 +23,12 @@ class CreateGoalVC: UIViewController {
     
     // IBActions
     @IBAction func shortTermBtnWasPressed(_ sender: Any) {
+        shortTermBtn.setSelectedColor()
+        longTermBtn.setDeselectedColor()
     }
     @IBAction func longTermBtnWasPressed(_ sender: Any) {
+        longTermBtn.setSelectedColor()
+        shortTermBtn.setDeselectedColor()
     }
     @IBAction func nextBtnWasPressed(_ sender: Any) {
     }
