@@ -22,6 +22,22 @@ extension UIViewController {
         present(viewControllerToPresent, animated: false, completion: nil) // animation to false because already add a new animation
     }
     
+    // create a function to present the secondary VC. Otherwise the FinishGoalVC dismiss back to the CreateGoalVC.
+    func presentSecondaryViewController(_ viewControllerToPresent: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        
+        // create the instance of presented ViewController
+        guard let presentedViewController = presentedViewController else { return }
+        
+        presentedViewController.dismiss(animated: false) {
+            self.view.window?.layer.add(transition, forKey: kCATransition)
+            self.present(viewControllerToPresent, animated: false, completion: nil)
+        }
+    }
+    
     // create a function to dissmiss the passing ViewController just like when having a Navigation Controller
     func dismissViewController() {
         let transition = CATransition()

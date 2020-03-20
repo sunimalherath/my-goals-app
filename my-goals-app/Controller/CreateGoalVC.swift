@@ -47,7 +47,8 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
             guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "finishGoalVC") as? FinishGoalVC else { return }
             finishGoalVC.initData(withDescription: goalTextArea.text, andGoalType: goalType)
             
-            presentViewController(finishGoalVC)
+            //presentViewController(finishGoalVC)
+            presentingViewController?.presentSecondaryViewController(finishGoalVC)
         }
     }
     @IBAction func backBtnWasPressed(_ sender: Any) {
