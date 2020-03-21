@@ -43,7 +43,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
         shortTermBtn.setDeselectedColor()
     }
     @IBAction func nextBtnWasPressed(_ sender: Any) {
-        if goalTextArea.text != "" && goalTextArea.text != "What is your goal?" {
+        if goalTextArea.text != "" || goalTextArea.text != "What is your goal?" {
             guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "finishGoalVC") as? FinishGoalVC else { return }
             finishGoalVC.initData(withDescription: goalTextArea.text, andGoalType: goalType)
             

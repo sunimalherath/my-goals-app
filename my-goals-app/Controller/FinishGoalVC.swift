@@ -57,7 +57,7 @@ class FinishGoalVC: UIViewController {
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
-                    dismiss(animated: true, completion: nil)
+                    dismissViewController()
                 }
             }
         }
@@ -65,5 +65,29 @@ class FinishGoalVC: UIViewController {
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
         dismissViewController()
+    }
+}
+
+extension FinishGoalVC {
+    /* Since this VC is presented modally, when dismissing it, won't trigger the viewWillAppear function in GoalsVC.
+       Therefore, firing the table reload from this VC as follows.
+    */
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let goalsVC = presentingViewController as? GoalsVC {
+            DispatchQueue.main.async {
+                goalsVC.fetchData { (complete) in
+                    if complete {
+                        if goalsVC.goals.count >= 1 {
+                            goalsVC.tableView.isHidden = false
+                        } else {
+                            goalsVC.tableView.isHidden = true
+                        }
+                    }
+                }
+                goalsVC.tableView.reloadData()
+            }
+        }
     }
 }
