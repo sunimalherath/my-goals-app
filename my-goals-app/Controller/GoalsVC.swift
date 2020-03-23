@@ -26,6 +26,11 @@ class GoalsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchGoadData()
+        tableView.reloadData()
+    }
+    
+    func fetchGoadData() {
         self.fetchData { (complete) in
             if complete {
                 if goals.count >= 1 {
@@ -35,7 +40,6 @@ class GoalsVC: UIViewController {
                 }
             }
         }
-        tableView.reloadData()
     }
     
     @IBAction func createGoalVCBtnWasPressed(_ sender: Any) {
@@ -65,9 +69,40 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            self.removeGoal(atIndexPath: indexPath)
+            self.fetchGoadData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        
+        return [deleteAction]
+    }
 }
 
 extension GoalsVC {
+    func removeGoal(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        managedContext.delete(goals[indexPath.row])
+        
+        do{
+            try managedContext.save()
+            print("Successfully removed data")
+        } catch {
+            debugPrint("Could not delete data \(error.localizedDescription)")
+        }
+    }
     func fetchData(completion: (_ complete: Bool) -> ()){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
